@@ -1,0 +1,34 @@
+### Substructure Enhanced MPNN version 1.2
+
+原始版本的代码组织过于混乱，因此重新进行组织编排
+本次的重点是所有结果可复现
+
+**目录**
+- datasets 
+  - tg
+    - tg.csv 223条玻璃转化温度数据集
+    - tg_with_name.csv 附有聚合物名称的数据集
+- checkpoints
+  - tg-MPNN 基线MPNN模型和SE-MPNN模型
+  - tg-RF 二进制摩根指纹和计数摩根指纹
+- figures
+  - SE-MPNN.jpg 模型整体架构图
+  - dataset_vis.png 使用dataset_visualization.ipynb生成，存在颜色和画幅宽度比例不对的问题
+  - dataset_vis2.png 以前实验的结果图，猜测是直接在控制台保存的，正文中采用这张图片
+  - sub_after_ranking Poly(benzyl acrylate)聚合物的子结构经过特征重要性排名之后
+  - polymer1.png Poly(benzyl acrylate)的子结构图（有/无不同的摩根半径）
+  - plot.png 散点图
+- code
+  - dataset_visualization.ipynb 生成聚合物类别和tg分布图
+  - density_plot.ipynb 绘画散点图(RF + MPNN)，暂时使用硬编码，具体情况见代码注释部分
+  - sub_select_forone.ipynb 为一个聚合物选择子结构
+  - sub_select.ipynb 为一整个数据集生成子结构
+  - sub_colorting.ipynb 子结构重要性可视化
+- predictions
+  - MPNN.csv MPNN预测结果
+  - SEMPNN.csv SE-MPNN预测结果（经过提升后，与后续可视化分析中所使用的模型不一致）
+  - RF_binary.csv RF预测结果（实际上没必要存在）
+  - tg_pred.csv 后续可视化分析所用预测结果，实际上是Substructure Enhanced MPNN 1 中的 tg_sub ckpt所得
+  - tg_pred_fg.csv 分割官能团预测结果
+  - tg_pred_n6.csv Top 6 个子结构的预测结果（隶属于补充实验）
+  - tg_n6_cano.csv Top 6 个子结构的规范化summary（隶属于补充实验）
